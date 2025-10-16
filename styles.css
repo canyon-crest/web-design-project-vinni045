@@ -1,10 +1,11 @@
 body{
-    background-color: #dec8b9;
+    background-color: #6c7b6d;
     /* font color - color: */ 
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 h1{
-    background-color: #e3c1ae;
+    background-color: #F7E1D7;
     /* margin is outside of the box, padding is inside of the box */
     border: 3px solid white; /* solid cna be repplaced by dashed*/
     border-radius: 8px;
@@ -20,7 +21,7 @@ h2{
     font-style: italic;
 }
 h3{
-    border-left: 20px groove #fff;
+    border-left: 20px groove #C9ADA7;
     padding-left: 9px;
     border-radius: 30px;
     /*border-bottom: 2px solid #fff;*/
@@ -29,32 +30,32 @@ h3{
 }
 p{
     line-height:1.6em;
-    background-color: #fff;
+    background-color: #DEDBD2;
     padding: 15px;
-    border: 2px dotted #ff000f;
+    border: 2px dotted #4A5759;
     font-size: 20px;
 }
 img{
     width: 140px;
     border-radius: 15px;
-    border: 2px solid #ff89;
+    border: 3px solid #EDAFB8;
     float: left;
     margin-right: 15px;
 }
 /* pseudo selectors */
 a:link{
-    color: #6a0d0d;
+    color: #461220;
     text-decoration: none;
     /* font weight: bold; */
 }
 a:visited{
-    color: #933b3b;
+    color: #914747;
 }
 a:hover{
-    color: aqua;
+    color: #D4A373;
 }
 a:active{
-    color: palevioletred;
+    color: #4A5759;
 }
 /* ID RULES */
 #pic1{
@@ -69,12 +70,15 @@ a:active{
 
 #container{
     width: 800px;
-    margin: 10px auto;
+    margin: 0px auto;
+    padding: 30px;
+    background-color: #B0C4B1;
+    /* background-color; padding; border-left; border right; */
 }
 
 /* Class rule*/
 .highlight{
-    background-color: yellow; 
+    background-color: #CCD5AE; 
     color: black;
     padding: 2px;
     border-radius: 3px;
