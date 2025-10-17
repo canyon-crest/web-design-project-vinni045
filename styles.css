@@ -87,7 +87,7 @@ a:active{
     background-color: white;
     width: 400px;
     line-height: 1.6em;
-    border: 2px solid purple;
+    border: 2px solid #db8f9a;
     float: right;
     margin: 14px;
     margin-top: 55px;
@@ -98,7 +98,7 @@ a:active{
     padding: 5px;
     margin: 0 auto;
     margin-top: 15px;
-    background-color: purple;
+    background-color: #EDAFB8;
     width: 150px;
 }
 #sidebar li{
@@ -132,10 +132,10 @@ a:active{
     }
 }
 
-/* Overlay on images */
+/* Overlay on images 
 .img-container{
     position: relative;
-    display: inline-block; /* Keeps the layout from moving */
+    display: inline-block; /* Keeps the layout from moving 
     width: 140px;
 }
 
@@ -170,4 +170,4 @@ a:active{
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-}
+} */
