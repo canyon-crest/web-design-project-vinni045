@@ -7,7 +7,7 @@ body{
 h1{
     background-color: #F7E1D7;
     /* margin is outside of the box, padding is inside of the box */
-    border: 3px solid white; /* solid cna be repplaced by dashed*/
+    border: 3px solid white; /* solid can be replaced by dashed*/
     border-radius: 8px;
     padding: 6px; /* first px is top bottom, second is left and right*/
     text-align: center;
@@ -82,4 +82,25 @@ a:active{
     color: black;
     padding: 2px;
     border-radius: 3px;
+}
+#sidebar{
+    background-color: white;
+    width: 400px;
+    line-height: 1.6em;
+    border: 2px solid purple;
+    float: right;
+    margin: 14px;
+    margin-top: 55px;
+}
+#sidebar h3{
+    border: none;
+    text-align: center;
+    padding: 5px;
+    margin: 0 auto;
+    margin-top: 15px;
+    background-color: purple;
+    width: 150px;
+}
+#sidebar li{
+    font-style: italic;
 }
