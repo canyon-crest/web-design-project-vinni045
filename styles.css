@@ -44,15 +44,15 @@ img{
 }
 /* pseudo selectors */
 a:link{
-    color: #461220;
+    color: #6e3041;
     text-decoration: none;
-    /* font weight: bold; */
+    font-weight: bold; 
 }
 a:visited{
-    color: #914747;
+    color: #c08e5c;
 }
 a:hover{
-    color: #D4A373;
+    color:#914747 ;
 }
 a:active{
     color: #4A5759;
@@ -91,6 +91,7 @@ a:active{
     float: right;
     margin: 14px;
     margin-top: 65px;
+    margin-bottom: 0px;
 }
 #sidebar h3{
     border: none;
@@ -171,3 +172,52 @@ a:active{
         transform: translate(-50%, -50%);
         text-align: center;
 } */
+/* ---- Image overlay (inline, non-disruptive) ---- */
+.img-container {
+  position: relative;
+  display: inline-block;    /* keeps it inline inside <p> */
+  float: left;              /* preserves the original float behaviour */
+  margin-right: 0px;       /* same spacing you had */
+  border-radius: 15px;
+  /* do NOT set width here — the #pic1/#pic2/#pic3 IDs control sizes */
+}
+
+.img-container .fade-image {
+  display: block;
+  float: none;              /* override any global img float so only container floats */
+  width: auto;              /* actual width comes from #pic1/#pic2/#pic3 */
+  height: auto;
+  border-radius: 15px;
+  border: 3px solid #EDAFB8; /* matches your original border */
+}
+
+/* Semi-transparent overlay */
+.img-container .fade-overlay {
+  position: absolute;
+  inset: 0;                 /* shorthand for top:0; right:0; bottom:0; left:0; */
+  width: 93%;
+  height: 100%;
+  background-color: rgba(0, 123, 167, 0.55); /* semi-transparent */
+  opacity: 0;
+  border-radius: 15px;
+  transition: opacity 0.35s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;     /* keep hover behaviour predictable for small cursors */
+}
+
+/* show overlay on hover of the container */
+.img-container:hover .fade-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.fade-text {
+  color: white;
+  font-size: 14px;
+  line-height: 1.2;
+  padding: 8px;
+  pointer-events: none;
+}
