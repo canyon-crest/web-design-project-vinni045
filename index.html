@@ -8,7 +8,7 @@
   
   <body>
     <div id="container">
-    <h1>Vanyaa Khandelwal</h1>
+    <h1 class="rain-title" aria-label="Vanyaa Khandelwal">Vanyaa Khandelwal</h1>
     <h2>Nickname: Vinni</h2>
     <div id = "sidebar">
     <h3> Fun Facts! </h3>
@@ -58,3 +58,29 @@ My favorite place in San Diego is <a href = "https://www.google.com/search?q=mis
     </div>
   </body>
 </html>
+<script>
+  // per-letter "rain down" (keeps layout; letters use transform so container doesn't shift)
+  (function () {
+    const el = document.querySelector('.rain-title');
+    if (!el) return;
+    const text = el.textContent || el.innerText;
+    el.setAttribute('aria-label', text.trim());
+    el.textContent = '';
+    const frag = document.createDocumentFragment();
+    const baseDelay = 0.06; // seconds between letters
+    const duration = 0.6;   // seconds per letter animation
+
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      const span = document.createElement('span');
+      span.className = ch === ' ' ? 'char space' : 'char';
+      span.innerHTML = ch === ' ' ? '&nbsp;' : ch;
+      if (ch !== ' ') {
+        span.style.animationDelay = (i * baseDelay) + 's';
+        span.style.animationDuration = duration + 's';
+      }
+      frag.appendChild(span);
+    }
+    el.appendChild(frag);
+  })();
+</script>

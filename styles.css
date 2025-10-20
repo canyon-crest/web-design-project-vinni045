@@ -220,6 +220,52 @@ footer {
     background: #c3352e;
     color: white;
   }
-  /* blahfdjfaosidfhidf*/
-  
-  
+/* per-letter rain-down title — uses transforms so the title box doesn't shift */
+.rain-title {
+  display: block;            /* keep default H1 block layout so page formatting is unchanged */
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;       /* keep title on one line like original */
+  overflow: visible;
+}
+
+.rain-title .char {
+  display: inline-block;
+  transform: translateY(-120%); /* start above visually; transform doesn't change layout */
+  opacity: 0;
+  will-change: transform, opacity;
+  animation-name: rain-drop;
+  animation-timing-function: cubic-bezier(.2,.9,.2,1);
+  animation-fill-mode: forwards;
+}
+
+/* preserve normal spacing for spaces */
+.rain-title .char.space {
+  display: inline-block;
+  width: 0.6ch;
+  transform: none;
+  opacity: 1;
+  animation: none;
+}
+
+@keyframes rain-drop {
+  0% {
+    transform: translateY(-120%) rotate(-6deg) scaleY(1);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(18%) rotate(2deg) scaleY(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scaleY(1);
+    opacity: 1;
+  }
+}
+
+/* reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .rain-title .char { animation: none !important; transform: none !important; opacity: 1 !important; }
+}
+
+
